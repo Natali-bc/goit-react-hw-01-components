@@ -1,5 +1,5 @@
 import React from 'react';
-import './Profile.css';
+import '../Profile/Profile.css';
 import StatsItem from './statsItem/StatsItem';
 import PropTypes from 'prop-types';
 
