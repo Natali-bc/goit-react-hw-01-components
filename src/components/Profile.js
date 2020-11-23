@@ -1,6 +1,7 @@
 import React from 'react';
 import './Profile.css';
 import StatsItem from './statsItem/StatsItem';
+import PropTypes from 'prop-types';
 
 const Profile = ({ user }) => {
   const { name, tag, location, avatar, stats } = user;
@@ -15,7 +16,6 @@ const Profile = ({ user }) => {
 
       <ul className="stats">
         {Object.entries(stats).map(el => {
-          console.log(el);
           return <StatsItem key={stats[el[0]]} el={el} />;
         })}
       </ul>
@@ -23,4 +23,13 @@ const Profile = ({ user }) => {
   );
 };
 
+Profile.propTypes = {
+  user: PropTypes.shape({
+    name: PropTypes.string,
+    tag: PropTypes.string,
+    location: PropTypes.string,
+    avatar: PropTypes.string,
+    stats: PropTypes.object,
+  }),
+};
 export default Profile;
